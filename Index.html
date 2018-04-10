@@ -1,0 +1,155 @@
+<html>
+    <head>
+
+      <title>My Framework Modal</title>
+      <link href="css/font-awesome.min.css" rel="stylesheet">
+      <script src="js/jquery.min.js" type="text/javascript"></script>
+         
+      <style>
+            .buttom-modal {
+                width: 200px;
+                height: 30px;
+                border-radius: 10px;
+                font-weight: bold;
+            }
+            #overlay-modal {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: #000;
+                opacity: 0.5;
+                filter: alpha(opacity=50);
+            }
+        
+            #modal {
+                position: absolute;
+                background: #fff;
+                padding: 8px;
+            }
+        
+            #content-modal {
+                border-radius: 8px;
+                background: #fff;
+                padding: 20px;
+            }
+        
+            #close {
+                position: absolute;
+                width: 24px;
+                height: 27px;
+                display: block;
+                text-indent: -9999px;
+                top: -7px;
+                right: -7px;
+            }
+      </style>
+
+    </head>
+    <body>
+        
+        <button onclick="modal.open()">Open to Modal Simples</button>
+        <button onclick="modal.alert()">Open to Modal Alerta</button>
+        <button onclick="modal.confirm()">Open to Modal Confirm</button>
+    </body>
+
+    <script>
+            var modal = (function () {
+                var
+                    method = {},
+                    $overlay,
+                    $modal,
+                    $content,
+                    $close;
+        
+                // Append the HTML
+        
+                // Center the modal in the viewport
+                method.center = function () { };
+        
+                // Open the modal
+                method.open = function (settings) { };
+        
+                // Close the modal
+                method.close = function () { };
+        
+                return method;
+            }());
+        
+            $overlay = $('<div id="overlay-modal"></div>');
+            $modal = $('<div id="modal"></div>');
+            $content = $('<div id="content-modal"></div>');
+            $close = $('<a id="close" href="#">close</a>');
+        
+            $modal.hide();
+            $overlay.hide();
+            $modal.append($content, $close);
+        
+            $(document).ready(function () {
+                $('body').append($overlay, $modal);
+            });
+        
+            modal.center = function () {
+                var top, left;
+        
+                top = Math.max($(window).height() - $modal.outerHeight(), 0) / 2;
+                left = Math.max($(window).width() - $modal.outerWidth(), 0) / 2;
+        
+                $modal.css({
+                    top: top + $(window).scrollTop(),
+                    left: left + $(window).scrollLeft()
+                });
+            };
+        
+            modal.open = function (settings) {
+        
+                if (settings == null) {
+                    settings = { content: $("<p>Modal Simples</p>"), width: "500px", height: "200px" }
+                }
+        
+                $content.empty().append(settings.content);
+                console.log(settings.content);
+                $modal.css({
+                    width: settings.width || 'auto',
+                    height: settings.height || 'auto'
+                })
+        
+                modal.center();
+        
+                $(window).bind('resize.modal', modal.center);
+        
+                $modal.show();
+                $overlay.show();
+            };
+        
+            modal.close = function () {
+                $modal.hide();
+                $overlay.hide();
+                $content.empty();
+                $(window).unbind('resize.modal');
+            };
+        
+            modal.confirm = function () {
+                modal.open({
+                    content: $('<center> <i class="fa fa-exclamation-circle" Style="Color:#93C01F;font-size: 100px;"/> </center>'
+                        + '<p Style="font-size: 25px;"> Tem certeza que deseja <span Style="font-weight: bold;"> INATIVAR </span> essa opção? </p>'
+                        + ' <center> <p Style="font-size: 25px;"> sem <span Style="font-weight: bold;"> ESSA OPÇÃO </span> acesso a pagina fica prejudicado!</p> </center>'
+                        + ' </br> <center> <button type="button" Style="background-color:#FCFCFC;color:black;" class="buttom-modal" onclick="modal.close()">Cancelar</button> '
+                        + ' <button type="button" Style="background-color:#93C01F;color:white;" class="buttom-modal"> Confirmar</button > </center> '),
+                });
+            };
+        
+            modal.alert = function (message) {
+        
+                if (message == null) message = "Alerta executado com sucesso!";
+        
+                modal.open({
+                    content: $('<h1> Alerta <i class="fa fa-times" Style="float:right;"></i> </h1>'
+                        + ' <center> <p Style="font-size: 25px;"> ' + message + '</p> </center>'
+                        + ' </br> <center> <button type="button" Style="background-color:#93C01F;color:white;" class="buttom-modal" onclick="modal.close()"> OK </button > </center> '),
+                });
+            };
+        
+        </script>
+</html>
