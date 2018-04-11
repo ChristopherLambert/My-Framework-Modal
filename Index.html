@@ -206,101 +206,100 @@
             };
         
             modal.confirm = function () {
-                modal.open({
+            modal.open({
                     content: $('<center> <i class="fa fa-exclamation-circle" Style="Color:#93C01F;font-size: 100px;"/> </center>'
                         + '<p Style="font-size: 25px;"> Tem certeza que deseja <span Style="font-weight: bold;"> INATIVAR </span> essa opção? </p>'
                         + ' <center> <p Style="font-size: 25px;"> sem <span Style="font-weight: bold;"> ESSA OPÇÃO </span> acesso a pagina fica prejudicado!</p> </center>'
                         + ' </br> <center> <button type="button" Style="background-color:#FCFCFC;color:black;" class="buttom-modal" onclick="modal.close()">Cancelar</button> '
                         + ' <button type="button" Style="background-color:#93C01F;color:white;" class="buttom-modal"> Confirmar</button > </center> '),
-                });
+            });
             };
-        
             modal.alert = function (message1, message2) {
 
             if (message1 == null) message1 = "A remoção das aulas foi executada com ";
-if (message2 == null) message2 = "sucesso!";
+            if (message2 == null) message2 = "sucesso!";
 
-modal.open({
-    content: $('<h1 Style="background-color:#F1F1F1; margin:0em"> Alerta <i class="fa fa-times" Style="float:right;background-color:#1f1f152e;cursor: pointer;" onclick="modal.close()"></i> </h1>'
-        + ' <center> <p Style="font-size: 25px; margin-top: 25px; margin-left: 50px; margin-right: 50px"> ' + message1 + '</p> </center>'
-        + ' <center> <p Style="font-size: 25px;"> ' + message2 + '</p> </center>'
-        + ' </br> <center> <button type="button" Style="background-color:#93C01F;color:white; margin-bottom: 25px;" class="buttom-modal" onclick="modal.close()"> OK </button > </center> '),
-});
+            modal.open({
+                content: $('<h1 Style="background-color:#F1F1F1; margin:0em"> Alerta <i class="fa fa-times" Style="float:right;background-color:#1f1f152e;cursor: pointer;" onclick="modal.close()"></i> </h1>'
+                    + ' <center> <p Style="font-size: 25px; margin-top: 25px; margin-left: 50px; margin-right: 50px"> ' + message1 + '</p> </center>'
+                    + ' <center> <p Style="font-size: 25px;"> ' + message2 + '</p> </center>'
+                    + ' </br> <center> <button type="button" Style="background-color:#93C01F;color:white; margin-bottom: 25px;" class="buttom-modal" onclick="modal.close()"> OK </button > </center> '),
+            });
 
-$("#content-modal").css("padding", "0px");
-};
-        
-            modal.insert = function () {
+            $("#content-modal").css("padding", "0px");
+        };
+    
+        modal.insert = function () {
 
-modal.open({
-    content: $('<h1 Style="background-color:#F1F1F1; margin:0em"> <i class="fa fa-user"></i> Cadastrar Aluno <i class="fa fa-times" Style="float:right;background-color:#1f1f152e;cursor: pointer;" onclick="modal.close()"></i> </h1>'
-        + ' <div class="row" Style="margin-top: 25px;"> '
-        + ' <div class="col s6"> <label for="nomeInput">Nome</label> <input type="text" id="nomeInput" class="input-modal"> </div> </div>'
-        + ' <div class="row"> '
-        + ' <div class="col s6"> <label for="emailInput">Email</label> <input type="text" id="emailInput" class="input-modal"> </div> '
-        + ' <div class="col s6"> <label for="senhaInput">Senha</label> <input type="password" id="senhaInput" class="input-modal"> </div> </div> '
-        + ' <div class="row"> '
-        + ' <div class="row col s4" Style="margin-top: 5px;"> <div class="col s3"> Inativo </div> <div class="col s4" Style="margin-top: 2px;"> <input type="checkbox" id="switch" class="switch" />'
-        + ' <label for="switch" class="switch"> Toggle </label> </div> Ativo <div class="col s4"> </div> </div>'
-        + ' <div class="col s2 push-s4"> <button type="button" Style="background-color:#FCFCFC;color:black; width: 100px;" class="buttom-modal" onclick="modal.close()"> Cancelar</button>  </div>'
-        + ' <div class="col s2 push-s4"> <button type="button" Style="background-color:#93C01F;color:white; width: 100px;" class="buttom-modal"> Cadastrar </button>  </div> </div>'),
-});
+        modal.open({
+            content: $('<h1 Style="background-color:#F1F1F1; margin:0em"> <i class="fa fa-user"></i> Cadastrar Aluno <i class="fa fa-times" Style="float:right;background-color:#1f1f152e;cursor: pointer;" onclick="modal.close()"></i> </h1>'
+                + ' <div class="row" Style="margin-top: 25px;"> '
+                + ' <div class="col s6"> <label for="nomeInput">Nome</label> <input type="text" id="nomeInput" class="input-modal"> </div> </div>'
+                + ' <div class="row"> '
+                + ' <div class="col s6"> <label for="emailInput">Email</label> <input type="text" id="emailInput" class="input-modal"> </div> '
+                + ' <div class="col s6"> <label for="senhaInput">Senha</label> <input type="password" id="senhaInput" class="input-modal"> </div> </div> '
+                + ' <div class="row"> '
+                + ' <div class="row col s4" Style="margin-top: 5px;"> <div class="col s3"> Inativo </div> <div class="col s4" Style="margin-top: 2px;"> <input type="checkbox" id="switch" class="switch" />'
+                + ' <label for="switch" class="switch"> Toggle </label> </div> Ativo <div class="col s4"> </div> </div>'
+                + ' <div class="col s2 push-s4"> <button type="button" Style="background-color:#FCFCFC;color:black; width: 100px;" class="buttom-modal" onclick="modal.close()"> Cancelar</button>  </div>'
+                + ' <div class="col s2 push-s4"> <button type="button" Style="background-color:#93C01F;color:white; width: 100px;" class="buttom-modal"> Cadastrar </button>  </div> </div>'),
+        });
 
-$("#content-modal").css("padding", "0px");
-};
+            $("#content-modal").css("padding", "0px");
+        };
 
-modal.select = function (nome, email, login, senha, isAtivo) {
+        modal.select = function (nome, email, login, senha, isAtivo) {
 
-modal.open({
-    content: $('<h1 Style="background-color:#F1F1F1; margin:0em"> <i class="fa fa-user"></i> ' + nome + ' <i class="fa fa-times" Style="float:right;background-color:#1f1f152e;cursor: pointer;" onclick="modal.close()"></i>'
-        + ' <button type="button" Style="background-color:#93C01F;color:white;float:right;width: 120px; font-size:16px; margin-right: 10px" class="buttom-modal" onclick="modal.edit(' + nome + ', ' + email + ', ' + login + ', ' + senha + ', ' + isAtivo + ')"; > Editar Aluno</button > </h1 > '
-        + ' <div class="row"> '
-        + ' <div class="col s6"> <label for="emailInput">Email</label> <input type="text" id="emailInput" class="input-modal-select"> </div>'
-        + ' <div class="col s6"> <label for="nomeInput">Nome</label> <input type="text" id="nomeInput" class="input-modal-select"> </div> </div>'
-        + ' <div class="row"> '
-        + ' <div class="col s6"> <label for="loginInput">Login</label> <input type="text" id="loginInput" class="input-modal-select"> </div> '
-        + ' <div class="col s6"> <label for="senhaInput">Senha</label> <input type="password" id="senhaInput" class="input-modal-select"> </div> </div> '
-        + ' <div class="row" Style="margin-bottom: 2px;"> '
-        + ' <div class="col s1 push-s9"> Inativo </div> '
-        + ' <div class="col s1 push-s9" Style="margin-top: 2px;"> <input type="checkbox" id="switch" class="switch" />'
-        + ' <label for="switch" class="switch"> Toggle </label> </div> <div class="col s1 push-s9"> Ativo </div> </div> '),
-});
+        modal.open({
+            content: $('<h1 Style="background-color:#F1F1F1; margin:0em"> <i class="fa fa-user"></i> ' + nome + ' <i class="fa fa-times" Style="float:right;background-color:#1f1f152e;cursor: pointer;" onclick="modal.close()"></i>'
+                + ' <button type="button" Style="background-color:#93C01F;color:white;float:right;width: 120px; font-size:16px; margin-right: 10px" class="buttom-modal" onclick="modal.edit(' + nome + ', ' + email + ', ' + login + ', ' + senha + ', ' + isAtivo + ')"; > Editar Aluno</button > </h1 > '
+                + ' <div class="row"> '
+                + ' <div class="col s6"> <label for="emailInput">Email</label> <input type="text" id="emailInput" class="input-modal-select"> </div>'
+                + ' <div class="col s6"> <label for="nomeInput">Nome</label> <input type="text" id="nomeInput" class="input-modal-select"> </div> </div>'
+                + ' <div class="row"> '
+                + ' <div class="col s6"> <label for="loginInput">Login</label> <input type="text" id="loginInput" class="input-modal-select"> </div> '
+                + ' <div class="col s6"> <label for="senhaInput">Senha</label> <input type="password" id="senhaInput" class="input-modal-select"> </div> </div> '
+                + ' <div class="row" Style="margin-bottom: 2px;"> '
+                + ' <div class="col s1 push-s9"> Inativo </div> '
+                + ' <div class="col s1 push-s9" Style="margin-top: 2px;"> <input type="checkbox" id="switch" class="switch" />'
+                + ' <label for="switch" class="switch"> Toggle </label> </div> <div class="col s1 push-s9"> Ativo </div> </div> '),
+        });
 
-$("#content-modal").css("padding", "0px");
-$("#emailInput").val(email);
-$("#nomeInput").val(nome);
-$("#loginInput").val(login);
-$("#senhaInput").val(senha);
-$("#switch").prop("checked", isAtivo);
+        $("#content-modal").css("padding", "0px");
+        $("#emailInput").val(email);
+        $("#nomeInput").val(nome);
+        $("#loginInput").val(login);
+        $("#senhaInput").val(senha);
+        $("#switch").prop("checked", isAtivo);
 
-//Exemplo = modal.select("Christopher", "christopherwhb@gmail.com", "login", "senha", false);
-};
+        //Exemplo = modal.select("Christopher", "christopherwhb@gmail.com", "login", "senha", false);
+    };
 
-modal.edit = function (nome, email, login, senha, isAtivo) {
+    modal.edit = function (nome, email, login, senha, isAtivo) {
 
-modal.open({
-    content: $('<h1 Style="background-color:#F1F1F1; margin:0em"> <i class="fa fa-user"></i>' + nome +'(Edição) <i class="fa fa-times" Style="float:right;background-color:#1f1f152e;cursor: pointer;" onclick="modal.close()"> </i> </h1>'
-        + ' <div class="row" Style="margin-top: 25px;"> '
-        + ' <div class="col s6"> <label for="loginInput">Nome</label> <input type="text" id="loginInput" class="input-modal"> </div>'
-        + ' <div class="col s6"> <label for="nomeInput">Nome</label> <input type="text" id="nomeInput" class="input-modal"> </div> </div>'
-        + ' <div class="row"> '
-        + ' <div class="col s6"> <label for="emailInput">Email</label> <input type="text" id="emailInput" class="input-modal"> </div> '
-        + ' <div class="col s6"> <label for="senhaInput">Senha</label> <input type="password" id="senhaInput" class="input-modal"> </div> </div> '
-        + ' <div class="row"> '
-        + ' <div class="row col s4" Style="margin-top: 5px;"> <div class="col s3"> Inativo </div> <div class="col s4" Style="margin-top: 2px;"> <input type="checkbox" id="switch" class="switch" />'
-        + ' <label for="switch" class="switch"> Toggle </label> </div> Ativo <div class="col s4"> </div> </div>'
-        + ' <div class="col s2 push-s4"> <button type="button" Style="background-color:#FCFCFC;color:black; width: 100px;" class="buttom-modal" onclick="modal.close()"> Cancelar</button>  </div>'
-        + ' <div class="col s2 push-s4"> <button type="button" Style="background-color:#93C01F;color:white; width: 100px;" class="buttom-modal"> Salvar </button>  </div> </div>'),
-});
+        modal.open({
+            content: $('<h1 Style="background-color:#F1F1F1; margin:0em"> <i class="fa fa-user"></i>' + nome + '(Edição) <i class="fa fa-times" Style="float:right;background-color:#1f1f152e;cursor: pointer;" onclick="modal.close()"> </i> </h1>'
+                + ' <div class="row" Style="margin-top: 25px;"> '
+                + ' <div class="col s6"> <label for="loginInput">Nome</label> <input type="text" id="loginInput" class="input-modal"> </div>'
+                + ' <div class="col s6"> <label for="nomeInput">Nome</label> <input type="text" id="nomeInput" class="input-modal"> </div> </div>'
+                + ' <div class="row"> '
+                + ' <div class="col s6"> <label for="emailInput">Email</label> <input type="text" id="emailInput" class="input-modal"> </div> '
+                + ' <div class="col s6"> <label for="senhaInput">Senha</label> <input type="password" id="senhaInput" class="input-modal"> </div> </div> '
+                + ' <div class="row"> '
+                + ' <div class="row col s4" Style="margin-top: 5px;"> <div class="col s3"> Inativo </div> <div class="col s4" Style="margin-top: 2px;"> <input type="checkbox" id="switch" class="switch" />'
+                + ' <label for="switch" class="switch"> Toggle </label> </div> Ativo <div class="col s4"> </div> </div>'
+                + ' <div class="col s2 push-s4"> <button type="button" Style="background-color:#FCFCFC;color:black; width: 100px;" class="buttom-modal" onclick="modal.close()"> Cancelar</button>  </div>'
+                + ' <div class="col s2 push-s4"> <button type="button" Style="background-color:#93C01F;color:white; width: 100px;" class="buttom-modal"> Salvar </button>  </div> </div>'),
+        });
 
-$("#content-modal").css("padding", "0px");
-$("#emailInput").val(email);
-$("#nomeInput").val(nome);
-$("#loginInput").val(login);
-$("#senhaInput").val(senha);
-$("#switch").prop("checked", isAtivo);
-//Exemplo = modal.edit("Christopher", "christopherwhb@gmail.com", "login", "senha", true);
-};
+        $("#content-modal").css("padding", "0px");
+        $("#emailInput").val(email);
+        $("#nomeInput").val(nome);
+        $("#loginInput").val(login);
+        $("#senhaInput").val(senha);
+        $("#switch").prop("checked", isAtivo);
+        //Exemplo = modal.edit("Christopher", "christopherwhb@gmail.com", "login", "senha", true);
+    };
 
         </script>
 </html>
